@@ -1,51 +1,67 @@
 CareerBloom-Hub
+
 A Comprehensive Job Portal System
 
 
 CareerBloom-Hub is an open-source job portal developed using the MERN (MongoDB, Express.js, React.js, Node.js) stack, aiming to bridge the gap between students seeking jobs and recruiters offering opportunities.
 
-Features
+FEATURES:
+
 User Registration and Authentication:
+
 Students and Recruiters can register on the portal.
 Secure authentication mechanisms to protect user accounts.
 
-Student View:
-Register and create a profile by uploading personal information, resume, and other details.
-Search for available jobs based on specific criteria (location, skills, company, etc.).
-Apply for jobs and track application status.
-Receive notifications about job application results (accepted/rejected).
+STUDENT VIEW:
+1-Register and create a profile by uploading personal information, resume, and other details.
 
-Recruiter View:
-Register and create new job postings.
-View student applications, including detailed profiles and resumes.
-Accept or reject applications, with real-time status updates to students.
+2-Search for available jobs based on specific criteria (location, skills, company, etc.).
 
-Database (MongoDB):
-Store user data (students, recruiters, admins).
-Store job listings and applications.
-Store application statuses and notifications.
+3-Apply for jobs and track application status.
+
+4-Receive notifications about job application results (accepted/rejected).
+
+RECRUITER VIEW:
+1-Register and create new job postings.
+
+2-View student applications, including detailed profiles and resumes.
+
+3-Accept or reject applications, with real-time status updates to students.
+
+DATABASE (MongoDB):
+1-Store user data (students, recruiters, admins).
+
+2-Store job listings and applications.
+
+3-Store application statuses and notifications.
 
 Authorization and Role-Based Access Control (RBAC):
 Differentiate access levels and permissions for students, recruiters, and admins.
 
-Frontend (React.js):
-User interfaces for students, recruiters, and admins.
-Search functionality for students to find jobs.
-Job application forms for students.
-Job creation and management forms for recruiters.
+FRONTEND(React.js):
+1-User interfaces for students, recruiters, and admins.
 
-Backend (Node.js and Express.js):
-APIs for user registration, authentication, and authorization.
-Manage job creation, student applications, and recruiter approvals.
-Handle real-time updates and notifications.
+2-Search functionality for students to find jobs.
+
+3-Job application forms for students.
+
+4-Job creation and management forms for recruiters.
+
+BACKEND (Node.js and Express.js):
+1-APIs for user registration, authentication, and authorization0.
+
+2-Manage job creation, student applications, and recruiter approvals.
+
+3-Handle real-time updates and notifications.
+
 Real-Time Updates:
 Implement real-time activity updates using a notification system for job applications and recruiter decisions.
 
 Security:
 Secure authentication and authorization.
 Sanitize and validate user inputs to prevent security vulnerabilities.
-Deployment:
 
+Deployment:
 The application is deployed on a cloud platform (versel and render).
 
 Tech Stack
