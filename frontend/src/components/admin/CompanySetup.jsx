@@ -137,7 +137,6 @@ const CompanySetup = () => {
                     }
                 </form>
             </div>
-
         </div>
     )
 }
