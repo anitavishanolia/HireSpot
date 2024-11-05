@@ -9,9 +9,7 @@ export const COMPANY_API_END_POINT="http://localhost:8000/api/v1/company";
 // export const APPLICATION_API_END_POINT = "https://careerbloom-hub-backend.onrender.com/api/v1/application";
 // export const COMPANY_API_END_POINT = "https://careerbloom-hub-backend.onrender.com/api/v1/company";
   
-// if (typeof process === "undefined") {
-//     globalThis.process = { env: { REACT_APP_API_URL: "https://careerbloom-hub-backend.onrender.com" } };
-//   }
+
   
 // export const USER_API_END_POINT = `${process.env.REACT_APP_API_URL}/api/v1/user`;
 // export const JOB_API_END_POINT = `${process.env.REACT_APP_API_URL}/api/v1/job`;
