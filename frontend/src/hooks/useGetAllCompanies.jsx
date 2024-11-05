@@ -17,7 +17,7 @@ const useGetAllCompanies = () => {
             } catch (error) {
                 console.log(error);
             }
-        }
+        }     
         fetchCompanies();
     },[])
 }

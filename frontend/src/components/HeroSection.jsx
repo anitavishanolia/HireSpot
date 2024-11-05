@@ -1,41 +1,48 @@
-import React, { useState } from 'react'
-import { Button } from './ui/button'
-import { Search } from 'lucide-react'
+
+import React, { useState } from 'react';
+ import { Button } from './ui/button';
+import { Search } from 'lucide-react';
 import { useDispatch } from 'react-redux';
 import { setSearchedQuery } from '@/redux/jobSlice';
-import { useNavigate } from 'react-router-dom';
+ import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
     const [query, setQuery] = useState("");
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+     const navigate = useNavigate();
 
     const searchJobHandler = () => {
         dispatch(setSearchedQuery(query));
         navigate("/browse");
-    }
+    };
 
     return (
-        <div className='text-center'>
-            <div className='flex flex-col gap-5 my-10'>
-                <span className=' mx-auto px-4 py-2 rounded-full bg-gray-100 text-[#F83002] font-medium'>No. 1 Job Hunt Website</span>
-                <h1 className='text-5xl font-bold'>Search, Apply & <br /> Get Your <span className='text-[#6A38C2]'>Dream Jobs</span></h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid aspernatur temporibus nihil tempora dolor!</p>
-                <div className='flex w-[40%] shadow-lg border border-gray-200 pl-3 rounded-full items-center gap-4 mx-auto'>
+        <div className='text-center bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 py-20 text-white'>
+            <div className='flex flex-col gap-6 my-10'>
+                <span className='mx-auto px-5 py-2 rounded-full bg-white text-purple-600 font-semibold shadow-lg'>Your Ultimate Career Platform</span>
+                <h1 className='text-6xl font-bold leading-tight'>
+                    Search, Apply & <br />
+                    Land Your <span className='text-yellow-400'>Dream Job</span>
+                </h1>
+                <p className='text-lg max-w-md mx-auto'>
+                    Discover your path to success with opportunities crafted for you.
+                </p>
+                <div className='flex w-[50%] shadow-xl border border-gray-300 pl-5 rounded-full items-center gap-3 bg-white mx-auto'>
                     <input
                         type="text"
-                        placeholder='Find your dream jobs'
+                        placeholder='Find your dream job...'
                         onChange={(e) => setQuery(e.target.value)}
-                        className='outline-none border-none w-full'
-
+                        className='outline-none border-none w-full text-gray-800 py-3 px-2 rounded-l-full'
                     />
-                    <Button onClick={searchJobHandler} className="rounded-r-full bg-[#6A38C2]">
+                    <button 
+                        onClick={searchJobHandler} 
+                        className="rounded-full px-4 py-2 bg-yellow-400 hover:bg-yellow-500 transition-colors duration-200 text-purple-800 font-semibold">
                         <Search className='h-5 w-5' />
-                    </Button>
+                    </button>
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default HeroSection
+export default HeroSection;

@@ -7,14 +7,14 @@ export const registerCompany = async (req, res) => {
         const { companyName } = req.body;
         if (!companyName) {
             return res.status(400).json({
-                message: "Company name is required.",
+                message: "Company name is required.",    //if empty data is send by the user
                 success: false
             });
         }
         let company = await Company.findOne({ name: companyName });
         if (company) {
             return res.status(400).json({
-                message: "You can't register same company.",
+                message: "You can't register same company.", //company name should be unique
                 success: false
             })
         };
@@ -35,7 +35,7 @@ export const registerCompany = async (req, res) => {
 export const getCompany = async (req, res) => {
     try {
         const userId = req.id; // logged in user id
-        const companies = await Company.find({ userId });
+        const companies = await Company.find({ userId });//ye wo sarii company h jise user ne loggedin kiya tha
         if (!companies) {
             return res.status(404).json({
                 message: "Companies not found.",

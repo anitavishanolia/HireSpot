@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react'
 import Navbar from '../shared/Navbar'
 import { Label } from '../ui/label'
@@ -22,7 +23,7 @@ const Signup = () => {
         role: "",
         file: ""
     });
-    const {loading,user} = useSelector(store=>store.auth);
+    const {loading, user} = useSelector(store => store.auth);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -34,7 +35,7 @@ const Signup = () => {
     }
     const submitHandler = async (e) => {
         e.preventDefault();
-        const formData = new FormData();    //formdata object
+        const formData = new FormData();
         formData.append("fullname", input.fullname);
         formData.append("email", input.email);
         formData.append("phoneNumber", input.phoneNumber);
@@ -57,43 +58,46 @@ const Signup = () => {
         } catch (error) {
             console.log(error);
             toast.error(error.response.data.message);
-        } finally{
+        } finally {
             dispatch(setLoading(false));
         }
     }
 
-    useEffect(()=>{
-        if(user){
-            navigate("/");
+    useEffect(() => {
+        if(user) {
+            navigate("/"); //to the home page
         }
-    },[])
+    }, [user]);
+
     return (
-        <div>
+        <div className="bg-blue-50 min-h-screen">
             <Navbar />
-            <div className='flex items-center justify-center max-w-7xl mx-auto'>
-                <form onSubmit={submitHandler} className='w-1/2 border border-gray-200 rounded-md p-4 my-10'>
-                    <h1 className='font-bold text-xl mb-5'>Sign Up</h1>
-                    <div className='my-2'>
+            <div className="flex items-center justify-center max-w-7xl mx-auto">
+                <form onSubmit={submitHandler} className="w-1/2 bg-white border border-gray-300 rounded-md p-6 my-10 shadow-md">
+                    <h1 className="font-bold text-2xl mb-5 text-gray-800">Sign Up</h1>
+                    <div className="my-3">
                         <Label>Full Name</Label>
                         <Input
                             type="text"
                             value={input.fullname}
                             name="fullname"
                             onChange={changeEventHandler}
-                            placeholder="patel"
+                            placeholder="shikha"
+                            className="border-gray-300 focus:border-blue-500"
                         />
                     </div>
-                    <div className='my-2'>
+                    <div className="my-3">
                         <Label>Email</Label>
                         <Input
                             type="email"
                             value={input.email}
                             name="email"
                             onChange={changeEventHandler}
-                            placeholder="patel@gmail.com"
+                            placeholder="shikha@gmail.com"
+                            className="border-gray-300 focus:border-blue-500"
                         />
                     </div>
-                    <div className='my-2'>
+                    <div className="my-3">
                         <Label>Phone Number</Label>
                         <Input
                             type="text"
@@ -101,19 +105,21 @@ const Signup = () => {
                             name="phoneNumber"
                             onChange={changeEventHandler}
                             placeholder="8080808080"
+                            className="border-gray-300 focus:border-blue-500"
                         />
                     </div>
-                    <div className='my-2'>
+                    <div className="my-3">
                         <Label>Password</Label>
                         <Input
                             type="password"
                             value={input.password}
                             name="password"
                             onChange={changeEventHandler}
-                            placeholder="patel@gmail.com"
+                            placeholder="password"
+                            className="border-gray-300 focus:border-blue-500"
                         />
                     </div>
-                    <div className='flex items-center justify-between'>
+                    <div className="flex items-center justify-between">
                         <RadioGroup className="flex items-center gap-4 my-5">
                             <div className="flex items-center space-x-2">
                                 <Input
@@ -138,7 +144,7 @@ const Signup = () => {
                                 <Label htmlFor="r2">Recruiter</Label>
                             </div>
                         </RadioGroup>
-                        <div className='flex items-center gap-2'>
+                        <div className="flex items-center gap-2">
                             <Label>Profile</Label>
                             <Input
                                 accept="image/*"
@@ -149,13 +155,19 @@ const Signup = () => {
                         </div>
                     </div>
                     {
-                        loading ? <Button className="w-full my-4"> <Loader2 className='mr-2 h-4 w-4 animate-spin' /> Please wait </Button> : <Button type="submit" className="w-full my-4">Signup</Button>
+                        loading ? (
+                            <Button className="w-full my-4 bg-blue-600 text-white flex items-center justify-center">
+                                <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please wait
+                            </Button>
+                        ) : (
+                            <Button type="submit" className="w-full my-4 bg-blue-600 text-white hover:bg-blue-700">Signup</Button>
+                        )
                     }
-                    <span className='text-sm'>Already have an account? <Link to="/login" className='text-blue-600'>Login</Link></span>
+                    <span className="text-sm">Already have an account? <Link to="/login" className="text-blue-700 hover:underline">Login</Link></span>
                 </form>
             </div>
         </div>
     )
 }
 
-export default Signup
+export default Signup;
