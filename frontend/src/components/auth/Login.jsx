@@ -68,7 +68,7 @@ const Login = () => {
                             value={input.email}
                             name="email"
                             onChange={changeEventHandler}
-                            placeholder="shikha@gmail.com"
+                            placeholder="anita@gmail.com"
                             className="border-blue-300 focus:border-blue-500"
                         />
                     </div>
